@@ -54,7 +54,16 @@ This will create a '.sekrets.key' file with something like;
 
 You should **never** commit .key files
 
-### (Step 3) Generate a file to holds secrets
+### (Step 3) Check that your default editor is set
+
+```
+  echo $EDITOR
+```
+
+If not set, set it in your ~/.bash_profile (or in Ubuntu in ~/.bashrc):
+export $EDITOR=/full/path/to/to/editor
+
+### (Step 4) Generate a file to hold secrets
 
 ```
   rake sekrets:generate:editor
@@ -66,7 +75,7 @@ This creates a sekrets directory with 2 files;
       ciphertext
       editor
 
-### (Step 4) Add secrets to file by running
+### (Step 5) Add secrets to file by running
 
 ```
   $  ./sekrets/editor
